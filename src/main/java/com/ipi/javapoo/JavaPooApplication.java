@@ -13,28 +13,68 @@ public class JavaPooApplication {
 		ConfigurableApplicationContext ctx = SpringApplication.run(JavaPooApplication.class, args);
 		System.out.println("##########################################\n");
 		
-		ExercicesNotes exercicesNotes = new ExercicesNotes();
+		boolean isPlaying = true;
+		while (isPlaying) {
+			inputChoice();
+			
+			Scanner keepGoing = new Scanner(System.in);
+			System.out.println("Voulez-vous continuer? (Y/N)");
+			if(!keepGoing.nextLine().equals("y")){
+				isPlaying = false;
+			}
+		}
 		
-		exercicesNotes.ex1("Benoît FAUCHERY");
-		
-		exercicesNotes.ex2(10);
-		
-		exercicesNotes.ex3();
-		
-		Scanner myObj = new Scanner(System.in);
-		System.out.println("Entrer un nombre :");
-		String number = myObj.nextLine();
+		ctx.close();
+	}
+	
+	private static void inputChoice() {
+		Scanner choix = new Scanner(System.in);
+		System.out.println("Entrer un exercice :");
 		try{
-			exercicesNotes.ex4(Integer.parseInt(number));
+			chooseExercice(Integer.parseInt(choix.nextLine()));
 		}
 		catch (NumberFormatException e){
 			System.out.println("Mauvaise saisie");
 			System.out.println("\n");
+			inputChoice();
 		}
-		
-		exercicesNotes.ex5();
-		
-		ctx.close();
 	}
-
+	
+	private static void chooseExercice(Integer choix) {
+		ExercicesNotes exercicesNotes = new ExercicesNotes();
+		
+		switch (choix) {
+			case 0, 1 -> exercicesNotes.ex1("Benoît FAUCHERY");
+			case 2 -> exercicesNotes.ex2(10);
+			case 3 -> exercicesNotes.ex3();
+			case 4 -> {
+				Scanner ex4Param = new Scanner(System.in);
+				System.out.println("Entrer un nombre :");
+				String number = ex4Param.nextLine();
+				try{
+					exercicesNotes.ex4(Integer.parseInt(number));
+				}
+				catch (NumberFormatException e){
+					System.out.println("Mauvaise saisie");
+					System.out.println("\n");
+				}
+			}
+			case 5 -> exercicesNotes.ex5();
+			case 6 ->{
+				Scanner ex6Param = new Scanner(System.in);
+				System.out.println("Entrer une phrase :");
+				exercicesNotes.ex6(ex6Param.nextLine());
+			}
+			case 7 ->{
+				Scanner ex7Param = new Scanner(System.in);
+				System.out.println("Entrer une phrase :");
+				exercicesNotes.ex7(ex7Param.nextLine());
+			}
+			case 8 ->{
+				exercicesNotes.ex8();
+			}
+			default -> System.out.println("Out of range");
+		}
+	}
+	
 }

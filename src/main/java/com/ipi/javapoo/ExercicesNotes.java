@@ -1,12 +1,19 @@
 package com.ipi.javapoo;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class ExercicesNotes {
 	
-	Integer numberEx5;
-	Random random = new Random();
+	private Integer numberEx5;
+	private final Random random = new Random();
+	
+	private final String TEXT_FILE = "java-poo.txt";
 	
 	public void ex1(String chaine){
 		StringBuilder returnChaine = new StringBuilder();
@@ -111,6 +118,48 @@ public class ExercicesNotes {
 		}
 		else{
 			markSeparation();
+		}
+	}
+	
+	public void ex6(String phrase){
+		System.out.println("La phrase comporte " + phrase.split(" ").length+ " mots.");
+	}
+	
+	public void ex7(String phrase){
+		try {
+			File myObj = new File(TEXT_FILE);
+			if (myObj.createNewFile()) {
+				FileWriter myWriter = new FileWriter(TEXT_FILE);
+				myWriter.write(phrase);
+				myWriter.close();
+				
+				System.out.println("File created: " + myObj.getAbsolutePath());
+			} else {
+				myObj.delete();
+				ex7(phrase);
+			}
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+	}
+	
+	public void ex8(){
+		try {
+			File myObj = new File(TEXT_FILE);
+			Scanner myReader = new Scanner(myObj);
+			if (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				myReader.close();
+				
+				System.out.println("Le fichier comporte " + data.split(" ").length+ " mots.");
+			}
+			else {
+				System.out.println("Aucun fichier texte détecté");
+			}
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
 		}
 	}
 	
