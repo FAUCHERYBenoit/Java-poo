@@ -1,5 +1,7 @@
 package com.ipi.javapoo;
 
+import com.ipi.exercices9_11.Rectangle;
+import com.ipi.exercices9_11.Square;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -19,7 +21,7 @@ public class JavaPooApplication {
 			
 			Scanner keepGoing = new Scanner(System.in);
 			System.out.println("Voulez-vous continuer? (Y/N)");
-			if(!keepGoing.nextLine().equals("y")){
+			if(!keepGoing.nextLine().equalsIgnoreCase("y")){
 				isPlaying = false;
 			}
 		}
@@ -70,8 +72,16 @@ public class JavaPooApplication {
 				System.out.println("Entrer une phrase :");
 				exercicesNotes.ex7(ex7Param.nextLine());
 			}
-			case 8 ->{
-				exercicesNotes.ex8();
+			case 8 -> exercicesNotes.ex8();
+			case 9 -> {
+				Rectangle rectangle = new Rectangle(6,12);
+				rectangle.display();
+			}
+			case 10 -> {
+				Square square = new Square(6,6);
+				square.display();
+				System.out.println();
+				square.calculDeSurface();
 			}
 			default -> System.out.println("Out of range");
 		}
