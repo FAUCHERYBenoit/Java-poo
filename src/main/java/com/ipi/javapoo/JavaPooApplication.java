@@ -78,6 +78,7 @@ public class JavaPooApplication {
 			case 10 -> exercicesNotes.ex10();
 			case 12 -> exercicesNotes.ex12();
 			case 11, 13 -> exercicesNotes.ex13();
+			case 14 -> exercicesNotes.ex14();
 			default -> System.out.println("Out of range");
 		}
 	}
