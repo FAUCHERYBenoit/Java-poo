@@ -1,4 +1,4 @@
-package com.ipi.javapoo.exerces12_13.entities;
+package com.ipi.javapoo.database_api.entities;
 
 import jakarta.persistence.*;
 
