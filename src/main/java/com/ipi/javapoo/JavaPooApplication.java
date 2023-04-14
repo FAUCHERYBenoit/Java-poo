@@ -1,6 +1,6 @@
 package com.ipi.javapoo;
 
-import com.ipi.javapoo.exerces12_14.Singleton;
+import com.ipi.javapoo.exerces12_13.Singleton;
 import com.ipi.javapoo.exercices9_11.Rectangle;
 import com.ipi.javapoo.exercices9_11.Square;
 import org.springframework.boot.SpringApplication;

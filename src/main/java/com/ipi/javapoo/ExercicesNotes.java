@@ -1,8 +1,6 @@
 package com.ipi.javapoo;
 
-import com.ipi.javapoo.exerces12_14.entities.Client;
-import com.ipi.javapoo.exerces12_14.repository.ClientRepository;
-import com.ipi.javapoo.exerces12_14.services.ClientService;
+import com.ipi.javapoo.exerces12_13.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;

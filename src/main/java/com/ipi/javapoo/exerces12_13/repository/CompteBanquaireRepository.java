@@ -1,6 +1,6 @@
-package com.ipi.javapoo.exerces12_14.repository;
+package com.ipi.javapoo.exerces12_13.repository;
 
-import com.ipi.javapoo.exerces12_14.entities.CompteBanquaire;
+import com.ipi.javapoo.exerces12_13.entities.CompteBanquaire;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

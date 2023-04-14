@@ -1,4 +1,4 @@
-package com.ipi.javapoo.exerces12_14.dtos;
+package com.ipi.javapoo.exerces12_13.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
