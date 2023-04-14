@@ -200,6 +200,10 @@ public class ExercicesNotes {
 		System.out.println("Veuillez lancer le test ClientServiceTest.");
 	}
 	
+	public void ex14() {
+		System.out.println("Veuillez lancer GUIApp.");
+	}
+	
 	private void markSeparation() {
 		System.out.println("\n");
 	}
