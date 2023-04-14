@@ -1,10 +1,11 @@
 package com.ipi.javapoo;
 
+import com.ipi.javapoo.exerces12_13.repository.ClientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,8 +13,10 @@ public class ExercicesNotes {
 	
 	private Integer numberEx5;
 	private final Random random = new Random();
-	
 	private final String TEXT_FILE = "java-poo.txt";
+	
+	@Autowired
+	private ClientRepository repository;
 	
 	public void ex1(String chaine){
 		StringBuilder returnChaine = new StringBuilder();
@@ -161,6 +164,10 @@ public class ExercicesNotes {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+	}
+	
+	public void ex13(){
+		System.out.println("Veuillez lancer le test ClientServiceTest.");
 	}
 	
 	private void markSeparation() {

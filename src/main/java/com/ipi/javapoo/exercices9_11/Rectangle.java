@@ -1,4 +1,4 @@
-package com.ipi.exercices9_11;
+package com.ipi.javapoo.exercices9_11;
 
 public class Rectangle {
 	
