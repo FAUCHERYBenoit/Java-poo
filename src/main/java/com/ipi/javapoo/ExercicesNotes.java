@@ -1,11 +1,15 @@
 package com.ipi.javapoo;
 
-import com.ipi.javapoo.exerces12_13.repository.ClientRepository;
+import com.ipi.javapoo.database_api.repository.ClientRepository;
+import com.ipi.javapoo.objects.Rectangle;
+import com.ipi.javapoo.objects.Square;
+import com.ipi.javapoo.singleton.Singleton;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -166,6 +170,32 @@ public class ExercicesNotes {
 		}
 	}
 	
+	public void ex9() {
+		Rectangle rectangle = new Rectangle(6,12);
+		rectangle.display();
+	}
+	
+	public void ex10() {
+		Square square = new Square(6,6);
+		square.display();
+		System.out.println();
+		square.calculDeSurface();
+	}
+	
+	public void ex12() {
+		Singleton singleton = Singleton.getInstance("Singleton1");
+		Singleton anotherSingleton = Singleton.getInstance("Singleton2");
+		if(Objects.equals(singleton, anotherSingleton)){
+			System.out.println(
+					"Singleton 1 : " + singleton + " & " +
+							"Singleton 2 : " + anotherSingleton + " possèdent la même adresse mémoire."
+			);
+		}
+		else{
+			System.out.println("Le singleton ne fonctionne pas");
+		}
+	}
+	
 	public void ex13(){
 		System.out.println("Veuillez lancer le test ClientServiceTest.");
 	}
@@ -173,4 +203,5 @@ public class ExercicesNotes {
 	private void markSeparation() {
 		System.out.println("\n");
 	}
+	
 }

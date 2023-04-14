@@ -1,7 +1,7 @@
 package com.ipi.javapoo.services;
 
-import com.ipi.javapoo.exerces12_13.entities.Client;
-import com.ipi.javapoo.exerces12_13.repository.ClientRepository;
+import com.ipi.javapoo.database_api.entities.Client;
+import com.ipi.javapoo.database_api.repository.ClientRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

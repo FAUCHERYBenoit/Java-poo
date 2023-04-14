@@ -1,4 +1,4 @@
-package com.ipi.javapoo.exerces12_13.dtos;
+package com.ipi.javapoo.database_api.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BanqueDTO {
+public class ClientDTO {
 	private Integer id;
 	private String nom;
+	private String prenom;
 }

@@ -1,8 +1,7 @@
 package com.ipi.javapoo;
 
-import com.ipi.javapoo.exerces12_13.Singleton;
-import com.ipi.javapoo.exercices9_11.Rectangle;
-import com.ipi.javapoo.exercices9_11.Square;
+import com.ipi.javapoo.objects.Rectangle;
+import com.ipi.javapoo.objects.Square;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -75,30 +74,10 @@ public class JavaPooApplication {
 				exercicesNotes.ex7(ex7Param.nextLine());
 			}
 			case 8 -> exercicesNotes.ex8();
-			case 9 -> {
-				Rectangle rectangle = new Rectangle(6,12);
-				rectangle.display();
-			}
-			case 10 -> {
-				Square square = new Square(6,6);
-				square.display();
-				System.out.println();
-				square.calculDeSurface();
-			}
-			case 12 -> {
-				Singleton singleton = Singleton.getInstance("Singleton1");
-				Singleton anotherSingleton = Singleton.getInstance("Singleton2");
-				if(Objects.equals(singleton, anotherSingleton)){
-					System.out.println(
-							"Singleton 1 : " + singleton + " & " +
-							"Singleton 2 : " + anotherSingleton + " possèdent la même adresse mémoire."
-					);
-				}
-				else{
-					System.out.println("Le singleton ne fonctionne pas");
-				}
-			}
-			case 13 -> exercicesNotes.ex13();
+			case 9 -> exercicesNotes.ex9();
+			case 10 -> exercicesNotes.ex10();
+			case 12 -> exercicesNotes.ex12();
+			case 11, 13 -> exercicesNotes.ex13();
 			default -> System.out.println("Out of range");
 		}
 	}

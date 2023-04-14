@@ -1,4 +1,4 @@
-package com.ipi.javapoo.exerces12_13;
+package com.ipi.javapoo.singleton;
 
 public class Singleton {
 	private static Singleton instance;

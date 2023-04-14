@@ -1,21 +1,14 @@
-package com.ipi.javapoo.exerces12_13.entities;
+package com.ipi.javapoo.database_api.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 @Entity
-@Table(name = "client")
-public class Client {
+@Table(name = "banque")
+public class Banque {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false)
@@ -24,10 +17,7 @@ public class Client {
 	@Column(name = "nom")
 	private String nom;
 	
-	@Column(name = "prenom")
-	private String prenom;
-	
-	@OneToMany(targetEntity=CompteBanquaire.class, mappedBy="client" )
+	@OneToMany(targetEntity=CompteBanquaire.class, mappedBy="banque" )
 	private List<CompteBanquaire> compteBanquaires = new ArrayList<>();
 	
 	public Long getId() {
@@ -44,14 +34,6 @@ public class Client {
 	
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-	
-	public String getPrenom() {
-		return prenom;
-	}
-	
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
 	}
 	
 	public List<CompteBanquaire> getCompteBanquaires() {
