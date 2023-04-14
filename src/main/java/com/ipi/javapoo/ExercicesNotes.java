@@ -7,6 +7,7 @@ import com.ipi.javapoo.singleton.Singleton;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
@@ -164,9 +165,8 @@ public class ExercicesNotes {
 			else {
 				System.out.println("Aucun fichier texte détecté");
 			}
-		} catch (IOException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			System.out.println("Aucun fichier n'a été créé, veuillez exécuter l'exercice 7.");
 		}
 	}
 	
